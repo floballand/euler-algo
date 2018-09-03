@@ -28,25 +28,27 @@ def main():
     """
 
     sumMax=100
-    variationMaxNumber=100
-    limitMinNumber=0
+    MaxNumber=100
+    currentDigit=0
     limitMaxNumber=2
     positionNumber=0
     vecteur=[0,0]
     
     incrementNumber=0
 
-    while (limitMinNumber!=limitMaxNumber):
-        incrementNumber=0
-        print(limitMinNumber)
-        while (incrementNumber!=variationMaxNumber):
-            incrementNumber+=1
-            vecteur[limitMinNumber]=incrementNumber
+    while (sum(vecteur)<=(limitMaxNumber*MaxNumber)):
+        i=0
+        
+        while (i!=MaxNumber):
+            i+=1
+            vecteur[currentDigit]=i
+            
             if sum(vecteur)==sumMax:
                 print(vecteur)
-                vecteur[limitMinNumber]=0
+                vecteur[currentDigit]=0
+                i=0
                 break
-        limitMinNumber+=1               
+        currentDigit+=1               
     exit(0)
     
 if __name__ == '__main__':
