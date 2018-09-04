@@ -27,28 +27,32 @@ def main():
     """ Main function
     """
 
-    sumMax=100
     MaxNumber=100
     currentDigit=0
-    limitMaxNumber=2
-    positionNumber=0
-    vecteur=[0,0]
+    vecteur=[0,0,0]
+    vecteurMem=list(vecteur)
+    limitMaxNumber=len(vecteur)
     
-    incrementNumber=0
+    print(limitMaxNumber)
 
     while (sum(vecteur)<=(limitMaxNumber*MaxNumber)):
         i=0
-        
-        while (i!=MaxNumber):
+        while (i<MaxNumber):
             i+=1
             vecteur[currentDigit]=i
-            
-            if sum(vecteur)==sumMax:
+            if(sum(vecteur)==100):
                 print(vecteur)
-                vecteur[currentDigit]=0
-                i=0
-                break
-        currentDigit+=1               
+
+        if(currentDigit==limitMaxNumber-1):
+            f=0
+            while(f<=currentDigit):
+                vecteurMem[f]=vecteurMem[f]+1
+                
+                f+=1
+            currentDigit=0
+        else:
+            currentDigit+=1
+        vecteur = list(vecteurMem)
     exit(0)
     
 if __name__ == '__main__':
