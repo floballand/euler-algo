@@ -2,8 +2,8 @@
 # -*- coding: UTF-8 -*-
 
 """
- @name : 
- @brief : 
+ @name :
+ @brief : find all result to obtain 100.
  --------
  @author : INOPE <fballand.inope@gmail.com>
  @license : GPL3
@@ -13,13 +13,11 @@
 # Imports
 # --------
 import string
-import sys,io,random
+import sys, io, random
 import locale
 import math
 
-"""
-all result to 100 without size fixed
-"""
+
 # --------
 # definition
 # --------
@@ -27,20 +25,16 @@ def main():
     """ Main function
     """
 
-    MaxNumber = 100
-    vecteur = [0, 0, 0]
+    MaxNumber = 100 """GOAL VALUE, AND MAXIMUM RATE"""
+    vecteur = [0, 0, 0 ,0 ,0]  """INPUT VECTEUR : YOU CAN CHANGE THIS SIZE"""
     limitMaxNumber = len(vecteur)
 
     while (sum(vecteur) <= (limitMaxNumber * MaxNumber)):
-        i = 0
-        vecteur[0]=0
-        while(i <MaxNumber):
-            i+=1
-            vecteur[0]=i
+        vecteur[0]=-1
+        while(vecteur[0] <MaxNumber):
+            vecteur[0]+=1
             if (sum(vecteur) == MaxNumber):
-                print("okkkk")
                 print(vecteur)
-
 
         if(vecteur[0]==MaxNumber):
             for j in range (1,limitMaxNumber):
@@ -48,8 +42,8 @@ def main():
                     vecteur[j-1] =0
                     vecteur[j]=vecteur[j]+1
 
-
     exit(0)
-    
+
+
 if __name__ == '__main__':
     main()
